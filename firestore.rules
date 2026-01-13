@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read access to categories and words for all users
+    match /categories/{document=**} {
+      allow read: if true;
+      allow write: if false; // Only admin panel (with Admin SDK) can write
+    }
+    
+    match /words/{document=**} {
+      allow read: if true;
+      allow write: if false; // Only admin panel (with Admin SDK) can write
+    }
+  }
+}

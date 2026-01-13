@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Taboo Fun - Landing Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#f2f20d",
+                "background-light": "#f8f8f5",
+                "background-dark": "#222210",
+                "taboo-purple": "#2d1a47",
+                "taboo-accent": "#5e3a99"
+              },
+              fontFamily: {
+                "display": ["Spline Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .bg-gradient-playful {
+            background: linear-gradient(135deg, #2d1a47 0%, #1a0b2e 100%);
+        }
+        .floating-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1.5px white;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<!-- Main Mobile Container -->
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden bg-taboo-purple dark:bg-taboo-purple">
+<!-- Decorative Floating Elements -->
+<div class="absolute inset-0 z-0">
+<!-- Speech Bubble 1 -->
+<div class="absolute top-[10%] left-[10%] w-16 h-16 rounded-full bg-taboo-accent/20 flex items-center justify-center rotate-[-12deg]">
+<span class="material-symbols-outlined text-primary/40 text-3xl">chat_bubble</span>
+</div>
+<!-- Letter A -->
+<div class="absolute top-[25%] right-[15%] text-primary/10 text-6xl font-bold rotate-[15deg] select-none">A</div>
+<!-- Letter B -->
+<div class="absolute bottom-[30%] left-[12%] text-taboo-accent/40 text-7xl font-bold rotate-[-20deg] select-none">B</div>
+<!-- Speech Bubble 2 -->
+<div class="absolute bottom-[15%] right-[10%] w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center rotate-[25deg]">
+<span class="material-symbols-outlined text-taboo-accent/60 text-4xl">record_voice_over</span>
+</div>
+<!-- Letter C -->
+<div class="absolute top-[45%] left-[5%] text-primary/5 text-8xl font-bold rotate-[-5deg] select-none">C</div>
+</div>
+<!-- Content Wrapper -->
+<div class="relative z-10 flex flex-col h-full min-h-screen">
+<!-- Top App Bar / Header -->
+<div class="flex items-center p-6 justify-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center absolute left-6">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+<span class="text-white/40 text-xs font-bold tracking-widest uppercase">Version 2.4.0</span>
+</div>
+<!-- Logo Section -->
+<div class="flex-1 flex flex-col items-center justify-center px-6">
+<div class="relative mb-12 transform scale-110">
+<h1 class="text-primary text-[64px] font-black leading-none text-center italic tracking-tighter drop-shadow-2xl">
+                        TABOO<br/><span class="text-outline text-transparent">FUN</span>
+</h1>
+<div class="absolute -top-4 -right-4 bg-white text-taboo-purple text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">
+                        Party Edition
+                    </div>
+</div>
+<!-- Main CTA: Start Game -->
+<div class="w-full max-w-sm px-4">
+<button class="group relative w-full h-20 bg-gradient-to-r from-[#f2f20d] to-[#ffcc00] rounded-full shadow-[0_10px_40px_-10px_rgba(242,242,13,0.4)] transition-all active:scale-95 flex items-center justify-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#232310] font-bold text-3xl">play_arrow</span>
+<span class="text-[#232310] text-2xl font-bold tracking-tight">START GAME</span>
+</div>
+</button>
+</div>
+<!-- Secondary Actions -->
+<div class="flex flex-col gap-4 w-full max-w-sm px-4 mt-12">
+<button class="flex items-center justify-between w-full h-14 px-6 bg-taboo-accent/30 border border-white/5 rounded-full text-white font-semibold hover:bg-taboo-accent/40 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">menu_book</span>
+<span>How to Play</span>
+</div>
+<span class="material-symbols-outlined text-white/30">chevron_right</span>
+</button>
+<button class="flex items-center justify-between w-full h-14 px-6 bg-taboo-accent/30 border border-white/5 rounded-full text-white font-semibold hover:bg-taboo-accent/40 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">settings</span>
+<span>Settings</span>
+</div>
+<span class="material-symbols-outlined text-white/30">chevron_right</span>
+</button>
+<button class="flex items-center justify-center w-full h-14 px-6 bg-transparent border border-white/10 rounded-full text-white/60 font-semibold text-sm uppercase tracking-wider hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined mr-2 text-sm">ad_off</span>
+                        Remove Ads
+                    </button>
+</div>
+</div>
+<!-- Bottom Navigation/Status (Mock iOS Home Indicator) -->
+<div class="p-6 flex flex-col items-center gap-6">
+<div class="flex gap-8">
+<button class="text-white/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">leaderboard</span>
+</button>
+<button class="text-white/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">share</span>
+</button>
+<button class="text-white/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">redeem</span>
+</button>
+</div>
+<div class="w-32 h-1.5 bg-white/10 rounded-full"></div>
+</div>
+</div>
+<!-- Background Image Grid (Subtle underlay) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
+<div class="grid grid-cols-3 gap-2 p-2">
+<div class="aspect-square bg-cover rounded-lg" data-alt="vibrant abstract purple gradient pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuDwO2pOcoEB6gWNeV-nwlsqUpD82RNVmA2Ot5HFcaTqeP5U2h0df4cOwaBZnO-PSPHVs2aoTD6WX-14zFngKcqcUmAF9se7foqsCaONE0KXP7ODk6SJiDiywPFrjgEsfdyTIfb_no_clwCFCdW5zTE79ilMtzdJKgamXtZVwVfDtQZs396Thy0_P5OIAy9qw0ntkqp9_rXqqPsfvvj4eUjXL6Waq_hy43vPycAQfz68HHxGTNldNHdKgtpYGIyQ-7C0oE0pP99tK1");'></div>
+<div class="aspect-square bg-cover rounded-lg" data-alt="abstract speech bubble icon pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDyhCoBLFtCHgoamXFimNSgANr2IIlDTed3UDEoE2He266Lkdv0kkOPwg-wZ0ix0OwRAReiQbwnO0weLbQ4d2LTjzLWs-joCiJe53fIntyJsXvWKuXL5CBEGaT2-A6HanpCzPD0BpAJAuPo4AdNG6PFr5MMNK-PyEPPawOn0uDpNNc6yQJXYzBe-CrHB4Ys2SeuoebmbQWpYb8jjPYaEr-xDv0706tHgSOUA9vy_mCZMS8WteYr54m44LWQtLP8CDsm3dGkLJsVkYrb");'></div>
+<div class="aspect-square bg-cover rounded-lg" data-alt="modern geometric party game elements" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpjPIsOf8QO2hVa9LiVlFeTFIkMDdpgkCPVG0eRBz_KjY__FATTPX1d0C_QZ4UF-T0ZNkNxinhyoZbjKQLSg_GsNoUYrSFp3iz7drcKG8BuE8HuELQTMWsSQARalg5ylF7BOs4tFV5aKkIENpiuszDItm2qFK1FtwVB_6wZfc4_KhVTmy9TqU89G_Tn6f1FOGB8LDb8-fV4hpSm2aYlfcK0w2rM_4f0uvcGRizDSWFj8iJHmHB_KDLWk6TX8E2qbH7hmQaAJEdIxJ_");'></div>
+<div class="aspect-square bg-cover rounded-lg" data-alt="vibrant abstract yellow accent pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0s0kWqQwi5og-y-8-jI_HBu9nDQ_7oKWxyzwaPQoIYiuVXQaYU-5ybHTFF7IXm_1Z7czOvyIl7eKu6XAm5Ja6GvbXwUxMkhvkqaY994wxzh2YD6lf1tFefbZZB43rku-yX56KWpujaC5QZcHnqlZx_Z010e6ljVmuBFwL4Kc2OjWzZ33AMBe524i0nwV7uDtue-df9mUc3FvdYiLR4YggAlE9bEH1SrpgfoZPpqyh16SHbhLuyb3M2G8GRVyMuLDmb6jT7A3iKUnQ");'></div>
+<div class="aspect-square bg-cover rounded-lg" data-alt="social gaming icon pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6mWoFju9J7cca2ojkR5YIZa2E6eVjWLho8ZnchM3SwuhqsSYkK8A3CPExwPNXFPh0IsaApitbgKj7deEtzlRX4vyoTTnOly91Ll2N9k8gV_UmJDlEMsQ94vYLwcyNh1LBjqJnmJSZu3tr3lodd5ThmsojZ52Oigy2zOymnud94lUVNTCIcSx9DgomkxyB48WomTfr7cAcwMTF4-EShjr4sH2ZnoD0kdAJGXvysKI8w2cY9rWT5BwuuyPPYfwX_H_IYM3b6thtasG_");'></div>
+<div class="aspect-square bg-cover rounded-lg" data-alt="abstract purple shapes and lines" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA33v50xvHU4scqxP5GMKpF9nfSc-Sm_IhI-suHtQwljv87fE64RfwCjcamLr9a23xIEHWwzYXi9Jnl2gSBKUYy2UG-XDkmxllyeL6TwKKOsQy9rSaDZRL_MEKUzUmmf98B0AQ5Ceg3A792ip5ZFJ0ly2HmjahLD6WEOwT3pRIPQxaPKM6cUF5O2Jd0U3O-zO3Zo6gEumB_d-5tXp-IVtfdacm0drvJMNhFcDB9FACBXckS6QSe3GYPw23g5HtC873juV8SV7lyDQJv");'></div>
+</div>
+</div>
+</div>
+</body></html>

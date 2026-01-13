@@ -1,0 +1,60 @@
+import React, { useState } from 'react';
+import LandingScreen from './src/screens/LandingScreen';
+import CategorySelectionScreen from './src/screens/CategorySelectionScreen';
+import GamePlayScreen from './src/screens/GamePlayScreen';
+import { View } from 'react-native';
+
+export default function App() {
+  const [currentScreen, setCurrentScreen] = useState('landing');
+  const [gameConfig, setGameConfig] = useState(null);
+
+  const navigateTo = (screen) => setCurrentScreen(screen);
+
+  const startGame = (categoryId, time) => {
+    setGameConfig({ categoryId, time });
+    setCurrentScreen('gameplay');
+  };
+
+  const finishGame = (score, words) => {
+    // For now go back to landing or show results (implementing results next)
+    setCurrentScreen('landing');
+  };
+
+  return (
+    <View className="flex-1">
+      {currentScreen === 'landing' && (
+        <LandingScreen /> // Need to add navigations to LandingScreen.js
+      )}
+      
+      {/* Since I didn't add props to LandingScreen.js yet, 
+          I will just show a simple switcher here for testing */}
+      
+      {currentScreen === 'landing' && (
+        <View className="absolute inset-x-0 bottom-40 z-50 px-10">
+          <TouchableOpacity 
+            onPress={() => navigateTo('selection')}
+            className="w-full h-20 bg-game-yellow rounded-full items-center justify-center"
+          >
+            <Text className="text-game-deep text-2xl font-black">PLAY NOW</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {currentScreen === 'selection' && (
+        <CategorySelectionScreen 
+          onBack={() => navigateTo('landing')}
+          onStart={startGame}
+        />
+      )}
+
+      {currentScreen === 'gameplay' && (
+        <GamePlayScreen 
+          categoryId={gameConfig?.categoryId}
+          time={gameConfig?.time}
+          onQuit={() => navigateTo('landing')}
+          onFinish={finishGame}
+        />
+      )}
+    </View>
+  );
+}

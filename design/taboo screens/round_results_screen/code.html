@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Round Results Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a413ec",
+                        "accent-yellow": "#facc15",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#1c1022",
+                        "card-purple": "#2d1b36",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .confetti-pattern {
+            background-image: radial-gradient(#facc15 1px, transparent 1px), radial-gradient(#a413ec 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30 min-h-screen relative overflow-x-hidden">
+<!-- Confetti / Pattern Overlay -->
+<div class="fixed inset-0 pointer-events-none confetti-pattern"></div>
+<!-- Top Navigation Bar -->
+<div class="relative flex h-auto w-full flex-col z-10">
+<div class="flex items-center px-4 pt-6 pb-2 justify-between">
+<div class="text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-2xl">close</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Round Finished!</h2>
+<div class="size-12"></div> <!-- Spacer for centering -->
+</div>
+</div>
+<!-- Hero Score Section -->
+<div class="relative flex flex-col items-center px-6 pt-8 pb-4 z-10">
+<!-- Festive Icon -->
+<div class="w-32 h-32 bg-accent-yellow rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(250,204,21,0.3)] mb-6 border-4 border-white/20">
+<span class="material-symbols-outlined text-background-dark text-6xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div class="text-center">
+<h1 class="text-white tracking-tight text-[48px] font-bold leading-tight pb-1">12 Points!</h1>
+<p class="text-accent-yellow text-lg font-medium">New Personal Best!</p>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="relative z-10 px-4 pb-32">
+<!-- Summary Cards -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-card-purple/50 border border-white/10 p-4 rounded-xl text-center">
+<p class="text-gray-400 text-sm mb-1 uppercase tracking-wider font-semibold">Correct</p>
+<p class="text-2xl font-bold text-green-400">12</p>
+</div>
+<div class="bg-card-purple/50 border border-white/10 p-4 rounded-xl text-center">
+<p class="text-gray-400 text-sm mb-1 uppercase tracking-wider font-semibold">Skipped</p>
+<p class="text-2xl font-bold text-red-400">3</p>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between px-2 pb-4">
+<h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Round Summary</h3>
+<span class="text-accent-yellow text-sm font-medium">15 Words Total</span>
+</div>
+<!-- Word List -->
+<div class="space-y-3">
+<!-- Correct Words -->
+<div class="flex items-center gap-4 bg-card-purple/40 hover:bg-card-purple/60 transition-colors px-4 py-3 rounded-xl border border-white/5">
+<div class="text-green-400 flex items-center justify-center rounded-lg bg-green-400/10 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-white text-lg font-semibold leading-normal">Kangaroo</p>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 text-sm">+1 pt</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-purple/40 hover:bg-card-purple/60 transition-colors px-4 py-3 rounded-xl border border-white/5">
+<div class="text-green-400 flex items-center justify-center rounded-lg bg-green-400/10 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-white text-lg font-semibold leading-normal">Pizza Hut</p>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 text-sm">+1 pt</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-purple/40 hover:bg-card-purple/60 transition-colors px-4 py-3 rounded-xl border border-white/5">
+<div class="text-green-400 flex items-center justify-center rounded-lg bg-green-400/10 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-white text-lg font-semibold leading-normal">Moonlight</p>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 text-sm">+1 pt</p>
+</div>
+</div>
+<!-- Skipped Words -->
+<div class="flex items-center gap-4 bg-card-purple/40 hover:bg-card-purple/60 transition-colors px-4 py-3 rounded-xl border border-white/5">
+<div class="text-red-400 flex items-center justify-center rounded-lg bg-red-400/10 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">cancel</span>
+</div>
+<div class="flex-1">
+<p class="text-white/60 text-lg font-semibold leading-normal line-through">Quantum Physics</p>
+</div>
+<div class="shrink-0">
+<p class="text-red-400/60 text-sm">Skipped</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-card-purple/40 hover:bg-card-purple/60 transition-colors px-4 py-3 rounded-xl border border-white/5">
+<div class="text-green-400 flex items-center justify-center rounded-lg bg-green-400/10 shrink-0 size-10">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-white text-lg font-semibold leading-normal">Espresso</p>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 text-sm">+1 pt</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action Area -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark to-transparent z-20">
+<div class="flex flex-col gap-3 max-w-md mx-auto">
+<button class="w-full bg-accent-yellow hover:bg-accent-yellow/90 text-background-dark font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 shadow-lg shadow-accent-yellow/20 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">play_arrow</span>
+                Play Next Round
+            </button>
+<button class="w-full bg-white/5 hover:bg-white/10 text-white font-semibold py-4 rounded-xl text-lg border border-white/10 active:scale-[0.98] transition-transform">
+                Back to Menu
+            </button>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="fixed top-20 left-10 text-accent-yellow/20 -rotate-12 pointer-events-none">
+<span class="material-symbols-outlined text-6xl">celebration</span>
+</div>
+<div class="fixed bottom-40 right-10 text-primary/30 rotate-12 pointer-events-none">
+<span class="material-symbols-outlined text-5xl">star</span>
+</div>
+</body></html>

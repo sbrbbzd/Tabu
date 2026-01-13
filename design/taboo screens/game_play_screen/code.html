@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Game Play Screen</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a413ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#1c1022",
+                        "card-white": "#ffffff",
+                        "game-yellow": "#FFD700",
+                        "game-green": "#22c55e",
+                        "game-red": "#ef4444",
+                        "game-blue": "#3b82f6"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: "Spline Sans", sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+        .confetti-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white overflow-hidden font-display">
+    <div
+        class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark max-w-md mx-auto overflow-hidden">
+        <div class="flex items-center justify-between px-6 pt-12 pb-2 z-20">
+            <div
+                class="flex size-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md cursor-pointer">
+                <span class="material-symbols-outlined text-white">home</span>
+            </div>
+            <div class="relative flex items-center justify-center">
+                <svg class="w-20 h-20 -rotate-90">
+                    <circle class="text-white/10" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor"
+                        stroke-width="4"></circle>
+                    <circle class="text-primary" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor"
+                        stroke-dasharray="213" stroke-dashoffset="53" stroke-width="4"></circle>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <span class="text-2xl font-bold leading-none">45</span>
+                    <span class="text-[10px] uppercase font-semibold opacity-60">Sec</span>
+                </div>
+            </div>
+            <div
+                class="flex size-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md cursor-pointer">
+                <span class="material-symbols-outlined text-white">settings</span>
+            </div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none opacity-40">
+            <div class="confetti-particle bg-yellow-400 rotate-12 top-[20%] left-[10%]"></div>
+            <div class="confetti-particle bg-primary -rotate-12 top-[25%] right-[15%]"></div>
+            <div class="confetti-particle bg-blue-400 rotate-45 top-[40%] left-[5%]"></div>
+            <div class="confetti-particle bg-green-400 -rotate-45 top-[60%] right-[8%]"></div>
+            <div class="confetti-particle bg-red-400 rotate-[30deg] top-[75%] left-[12%]"></div>
+            <div class="confetti-particle bg-pink-400 rotate-12 top-[15%] right-[25%]"></div>
+            <div class="absolute w-32 h-32 bg-primary/10 rounded-full blur-2xl top-1/4 -left-16"></div>
+            <div class="absolute w-40 h-40 bg-blue-500/10 rounded-full blur-3xl bottom-1/4 -right-20"></div>
+        </div>
+        <div class="flex justify-center mt-4 z-20">
+            <div class="bg-primary/20 border border-primary/30 px-4 py-1 rounded-full backdrop-blur-sm">
+                <p class="text-sm font-medium tracking-wide">SCORE: <span class="font-bold text-primary">12</span></p>
+            </div>
+        </div>
+        <div class="flex-1 flex items-center justify-center px-6 relative z-10">
+            <div
+                class="w-full bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.4)] flex flex-col items-center py-10 px-6 transform transition-transform">
+                <div class="text-gray-400 text-[10px] font-bold tracking-[0.2em] mb-2 uppercase">Current Word</div>
+                <h1 class="text-5xl font-extrabold text-[#eab308] tracking-tight mb-8 drop-shadow-sm">CACTUS</h1>
+                <div class="w-full h-[1.5px] bg-gray-100 mb-8"></div>
+                <div class="flex flex-col items-center gap-3 w-full">
+                    <p class="text-gray-400 text-[9px] font-black tracking-widest uppercase mb-1">Taboo Words</p>
+                    <div
+                        class="bg-gray-50/80 w-full py-3 rounded-2xl border border-gray-100 flex justify-center shadow-sm">
+                        <span class="text-gray-700 text-xl font-semibold">Desert</span>
+                    </div>
+                    <div
+                        class="bg-gray-50/80 w-full py-3 rounded-2xl border border-gray-100 flex justify-center shadow-sm">
+                        <span class="text-gray-700 text-xl font-semibold">Prickly</span>
+                    </div>
+                    <div
+                        class="bg-gray-50/80 w-full py-3 rounded-2xl border border-gray-100 flex justify-center shadow-sm">
+                        <span class="text-gray-700 text-xl font-semibold">Plant</span>
+                    </div>
+                    <div
+                        class="bg-gray-50/80 w-full py-3 rounded-2xl border border-gray-100 flex justify-center shadow-sm">
+                        <span class="text-gray-700 text-xl font-semibold">Green</span>
+                    </div>
+                    <div
+                        class="bg-gray-50/80 w-full py-3 rounded-2xl border border-gray-100 flex justify-center shadow-sm">
+                        <span class="text-gray-700 text-xl font-semibold">Spikes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-6 pb-12 pt-4 z-20">
+            <div class="flex gap-3">
+                <button
+                    class="flex-1 bg-game-red hover:brightness-110 h-20 rounded-[2rem] flex flex-col items-center justify-center gap-1 shadow-lg shadow-red-950/40 active:translate-y-1 transition-all">
+                    <span class="material-symbols-outlined text-white text-2xl">warning</span>
+                    <span class="text-white text-[11px] font-black tracking-wider">TABOO</span>
+                </button>
+                <button
+                    class="flex-1 bg-game-blue hover:brightness-110 h-20 rounded-[2rem] flex flex-col items-center justify-center gap-1 shadow-lg shadow-blue-950/40 active:translate-y-1 transition-all">
+                    <span class="material-symbols-outlined text-white text-2xl">redo</span>
+                    <span class="text-white text-[11px] font-black tracking-wider">PASS</span>
+                </button>
+                <button
+                    class="flex-1 bg-game-green hover:brightness-110 h-20 rounded-[2rem] flex flex-col items-center justify-center gap-1 shadow-lg shadow-green-950/40 active:translate-y-1 transition-all">
+                    <span class="material-symbols-outlined text-white text-2xl">check_circle</span>
+                    <span class="text-white text-[11px] font-black tracking-wider">CORRECT</span>
+                </button>
+            </div>
+        </div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/30 rounded-full blur-[100px] pointer-events-none">
+        </div>
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/30 rounded-full blur-[100px] pointer-events-none">
+        </div>
+    </div>
+
+</body>
+
+</html>
